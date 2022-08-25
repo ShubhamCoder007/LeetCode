@@ -1,0 +1,29 @@
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        
+        ln = ''
+        for i in range(len(s)):
+            #print(i, len(s))
+            tmp=''
+            for c in s[i:]: #[ch for ch in s[i:]]:
+                #print('s: ',s[i:] ,' tmp: ', tmp, '  ch: ',c)
+                if c in tmp:
+                    #print('brk')
+                    break
+                tmp=tmp+c
+                
+                    
+            if ln == '':
+                ln=tmp
+                continue
+                
+            if len(ln) < len(tmp):
+                ln=tmp
+                
+            #print('ln: ',ln)
+        return len(ln)
+                
